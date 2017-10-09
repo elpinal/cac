@@ -1,6 +1,4 @@
-module Lib
-    ( someFunc
-    ) where
+module Lib where
 
 import qualified Data.Set as Set
 
@@ -8,6 +6,7 @@ someFunc :: IO ()
 someFunc = putStrLn "someFunc"
 
 newtype Combination a = Combination { runCombination :: [a] }
+  deriving (Eq, Ord, Show)
 
 newtype Circulation c a = Circulation { runCirculation :: (a, c) }
 
