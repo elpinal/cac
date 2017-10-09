@@ -28,3 +28,6 @@ future _ cs
 
 class Score a where
   score :: a -> Int
+
+class Choice a where
+  choice :: a -> a -> a
