@@ -9,7 +9,10 @@ newtype Combination a = Combination { runCombination :: [a] }
 
 newtype Circulation a c = Circulation { runCirculation :: (a, c) }
 
-newtype Days = Days Int
-
 class Cycle a where
   days :: a -> Days
+
+newtype Days = Days Int
+
+instance Cycle Days where
+  days d = d
