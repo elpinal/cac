@@ -19,4 +19,6 @@ instance Cycle Days where
   days d = d
 
 future :: Cycle c => c -> Set.Set (Combination a) -> [Combination a]
-future _ cs = cycle $ Set.toList cs
+future _ cs
+  | Set.null cs = []
+  | otherwise = cycle $ Set.toList cs
