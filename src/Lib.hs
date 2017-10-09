@@ -2,6 +2,8 @@ module Lib
     ( someFunc
     ) where
 
+import qualified Data.Set as Set
+
 someFunc :: IO ()
 someFunc = putStrLn "someFunc"
 
@@ -16,3 +18,6 @@ newtype Days = Days { runDays :: Int }
 
 instance Cycle Days where
   days d = d
+
+future :: Cycle c => c -> Set.Set (Combination a) -> [Combination a]
+future _ cs = cycle $ Set.toList cs
