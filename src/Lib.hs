@@ -25,3 +25,6 @@ future :: Cycle c => c -> Set.Set (Combination a) -> [Combination a]
 future _ cs
   | Set.null cs = []
   | otherwise = cycle $ Set.toList cs
+
+class Score a where
+  score :: a -> Int
