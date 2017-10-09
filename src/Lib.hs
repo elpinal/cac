@@ -8,6 +8,9 @@ someFunc = putStrLn "someFunc"
 newtype Combination a = Combination { runCombination :: [a] }
   deriving (Eq, Ord, Show)
 
+instance Functor Combination where
+  fmap f (Combination xs) = Combination $ map f xs
+
 newtype Circulation c a = Circulation { runCirculation :: (a, c) }
 
 class Cycle a where
