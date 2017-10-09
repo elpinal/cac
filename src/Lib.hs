@@ -9,7 +9,7 @@ someFunc = putStrLn "someFunc"
 
 newtype Combination a = Combination { runCombination :: [a] }
 
-newtype Circulation a c = Circulation { runCirculation :: (a, c) }
+newtype Circulation c a = Circulation { runCirculation :: (a, c) }
 
 class Cycle a where
   days :: a -> Days
